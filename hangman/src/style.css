@@ -35,6 +35,7 @@ h1 {
   gap: 1rem;
   justify-content: center;
   padding: 2rem;
+  font-size: 1.5rem;
 }
 .letter,
 .space {
@@ -53,7 +54,7 @@ h1 {
   } */
 }
 
-.row button {
+button {
   background-color: lightblue;
   color: white;
   border: none;
@@ -65,17 +66,12 @@ h1 {
   margin: 5px;
 }
 
-.row button:hover {
+button:hover {
   background-color: darkblue;
   transition: background-color 0.2s ease;
 }
 
-.row button:disabled {
+button:disabled {
   background-color: lightgray;
   cursor: not-allowed;
-}
-
-.space-btn {
-  width: 20rem;
-  height: 2rem;
 }

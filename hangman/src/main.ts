@@ -11,8 +11,13 @@ export const wordContainer = document.querySelector("#word-container")!;
 
 for (let i = 0; i < word.length; i++) {
   const letter = document.createElement("span");
-  if (word[i] !== " ") letter.classList.add("letter");
-  else letter.classList.add("space");
+  console.log(word[i]);
+  if (word[i] !== " " && word[i] !== "-") {
+    letter.classList.add("letter");
+  } else {
+    letter.classList.add("correct", "space");
+    letter.innerHTML = word[i] === "-" ? "&ndash;" : word[i];
+  }
   wordContainer.appendChild(letter);
 }
 

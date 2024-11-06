@@ -6,14 +6,12 @@ export default function generateButtons() {
   const firstRowLetters = "qwertyuiop".split("");
   const secondRowLetters = "asdfghjkl".split("");
   const thirdRowLetters = "zxcvbnm".split("");
-  const space = [" "];
-  const fourthRow = generateRow(space);
 
   const buttons = [];
   const firstRow = generateRow(firstRowLetters);
   const secondRow = generateRow(secondRowLetters);
   const thirdRow = generateRow(thirdRowLetters);
-  buttons.push(firstRow, secondRow, thirdRow, fourthRow);
+  buttons.push(firstRow, secondRow, thirdRow);
 
   const buttonContainer = document.querySelector("#button-container")!;
   buttonContainer.append(...buttons);
@@ -32,7 +30,6 @@ const generateRow = (arr: string[]) => {
       button.disabled = true;
       createSVG(incorrectGuesses);
     });
-    if (button.value === " ") button.classList.add("space-btn");
     row.appendChild(button);
   });
   return row;
@@ -40,6 +37,7 @@ const generateRow = (arr: string[]) => {
 
 const checkGuess = (currentGuess: string) => {
   const correctWord = word.toLowerCase();
+  console.log(correctWord);
   const indexes: number[] = [];
 
   const isInWord = correctWord.includes(currentGuess);
